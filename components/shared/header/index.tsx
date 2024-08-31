@@ -3,6 +3,7 @@ import Link from "next/link";
 import { APP_NAME } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, UserIcon } from "lucide-react";
+import Menu from "./menu";
 
 const Header = async () => {
   return (
@@ -19,20 +20,7 @@ const Header = async () => {
             <span className="font-bold ml-1">{APP_NAME}</span>
           </Link>
         </div>
-        <div className="space-x-2">
-          <Button asChild variant="ghost">
-            <Link href="/cart">
-              <ShoppingCart />
-              <span className="ml-1">Cart</span>
-            </Link>
-          </Button>
-          <Button asChild>
-            <Link href="/login">
-              <UserIcon />
-              <span className="ml-1">Sign in</span>
-            </Link>
-          </Button>
-        </div>
+        <Menu />
       </div>
     </header>
   );
