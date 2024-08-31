@@ -17,13 +17,17 @@ const ProductCard = ({ product }: { product: any }) => {
           />
         </Link>
       </CardHeader>
-      <CardContent className="p-4 grid gap-4">
+      <CardContent className="p-3 grid gap-3">
         <div>
-          <p className="text-xs">{product.brand}</p>
+          <p className="text-xs bg-gray-100 w-fit rounded px-2 py-1">
+            {product.brand}
+          </p>
         </div>
         <div>
           <Link href={`/product/${product.slug}`}>
-            <h2 className="text-sm text-muted-foreground">{product.name}</h2>
+            <h2 className="text-sm text-muted-foreground line-clamp-1">
+              {product.name}
+            </h2>
           </Link>
         </div>
         <div className="flex-between gap-4">
@@ -31,7 +35,7 @@ const ProductCard = ({ product }: { product: any }) => {
           {product.stock > 0 ? (
             <p className="font-semibold">${product.price}</p>
           ) : (
-            <p className="text-destructive">out of stock</p>
+            <p className="text-destructive text-sm">out of stock</p>
           )}
         </div>
       </CardContent>
