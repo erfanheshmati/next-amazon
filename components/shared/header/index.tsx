@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { APP_NAME } from "@/lib/constants";
-import { Button } from "@/components/ui/button";
-import { ShoppingCart, UserIcon } from "lucide-react";
 import Menu from "./menu";
 
 const Header = async () => {
