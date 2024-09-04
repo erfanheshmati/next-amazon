@@ -34,8 +34,8 @@ export default function CartForm({ cart }: { cart?: Cart }) {
           Cart is empty. <Link href="/">Go shopping</Link>
         </div>
       ) : (
-        <div className="grid md:grid-cols-4 md:gap-10">
-          <div className="overflow-x-auto md:col-span-3">
+        <div className="grid lg:grid-cols-4 lg:gap-10">
+          <div className="overflow-x-auto lg:col-span-3">
             <Table>
               <TableHeader>
                 <TableRow>
@@ -119,14 +119,14 @@ export default function CartForm({ cart }: { cart?: Cart }) {
             </Table>
           </div>
 
-          <div>
+          <div className="mt-5 lg:mt-0">
             <Card>
               <CardContent className="p-4 gap-4">
-                <div className="mb-2">
-                  <p className="text-xl">
+                <div className="mb-3 space-y-1">
+                  <p className="text-lg">
                     Total quantity: {cart.items.reduce((a, c) => a + c.qty, 0)}
                   </p>
-                  <p className="text-xl">
+                  <p className="text-lg">
                     Subtotal: {formatCurrency(cart.itemsPrice)}
                   </p>
                 </div>
@@ -141,7 +141,7 @@ export default function CartForm({ cart }: { cart?: Cart }) {
                     <Loader className="animate-spin w-4 h-4" />
                   ) : (
                     <ArrowRight className="w-4 h-4" />
-                  )}
+                  )}{" "}
                   Proceed to Checkout
                 </Button>
               </CardContent>
