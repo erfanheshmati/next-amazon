@@ -23,7 +23,7 @@ export default function AddToCart({
     cart && cart.items.find((x) => x.productId === item.productId);
 
   return existItem ? (
-    <div>
+    <div className="mt-2">
       <Button
         type="button"
         variant="outline"
@@ -70,7 +70,7 @@ export default function AddToCart({
     </div>
   ) : (
     <Button
-      className="w-full"
+      className="w-full mt-2"
       type="button"
       disabled={isPending}
       onClick={() => {
@@ -98,7 +98,11 @@ export default function AddToCart({
         });
       }}
     >
-      {isPending ? <Loader className="animate-spin" /> : <Plus />}
+      {isPending ? (
+        <Loader className="h-4 w-4 animate-spin" />
+      ) : (
+        <Plus className="h-4 w-4" />
+      )}
       Add to cart
     </Button>
   );

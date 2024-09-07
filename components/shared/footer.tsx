@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="border-t">
       <div className="p-5 text-center text-sm">
-        &copy; {year} {APP_NAME} | All Rights reserved.
+        &copy; {year} {APP_NAME} | All rights reserved.
         <br />
         <span>
           Developed by{" "}
